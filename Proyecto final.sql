@@ -1,6 +1,6 @@
 
 -- CREATE SCHEMA Universidad;
-
+USE
 
 CREATE TABLE Profesiones 
 (ProfesionesID INT NOT NULL AUTO_INCREMENT,
