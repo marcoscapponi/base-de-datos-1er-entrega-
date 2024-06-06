@@ -1,99 +1,50 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyOFNlzLIIzxLOAh8AaJmCZi",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/marcoscapponi/base-de-datos-1er-entrega-/blob/main/Primer%20entrega%20proyecto%20final%20Capponi\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": null,
-      "metadata": {
-        "id": "nGBAPDukQjJs"
-      },
-      "outputs": [],
-      "source": [
-        "\n",
-        "def registro_usuario(usuarios, nombre_usuario, contrasenia):\n",
-        "    if nombre_usuario in usuarios:\n",
-        "        print(\"El usuario ya existe.\")\n",
-        "    else:\n",
-        "        usuarios[nombre_usuario] = contrasenia\n",
-        "        print(\"Usuario registrado con exito.\")\n",
-        "\n",
-        "def mostrar_usuarios(usuarios):\n",
-        "    print(\"Usuarios registrados: \")\n",
-        "    for usuario in usuarios:\n",
-        "        print(\".\", usuario)\n",
-        "\n",
-        "\n",
-        "def login_usuario(usuarios, nombre_usuario, contrasenia):\n",
-        "    if nombre_usuario in usuarios and usuarios[nombre_usuario] == contrasenia:\n",
-        "        print(\"bienvenido \", nombre_usuario, \".\")\n",
-        "    else:\n",
-        "        print(\"ERROR, nombre de usuario o contrasenia incorrecta.\")\n",
-        "\n",
-        "\n",
-        "usuarios = {}\n",
-        "\n",
-        "def funcion_principal():\n",
-        "    while True:\n",
-        "        print(\"Menu\\n\")\n",
-        "        print(\"1. Login in \")\n",
-        "        print(\"2. Mostrar usuarios registrados\")\n",
-        "        print(\"3. Registrarse\")\n",
-        "        print(\"4. Salir\")\n",
-        "\n",
-        "        elegir = input(\"Seleccione una opcion: \")\n",
-        "\n",
-        "        if elegir == '1':\n",
-        "            nombre_usuario = input(\"Ingrese su nombre de usuario: \")\n",
-        "            contrasenia = input(\"Ingrese su contrasenia: \")\n",
-        "            login_usuario(usuarios, nombre_usuario, contrasenia)\n",
-        "        elif elegir == '2':\n",
-        "            mostrar_usuarios(usuarios)\n",
-        "        elif elegir == '3':\n",
-        "            nombre_usuario = input(\"Ingrese el nombre de usuario: \")\n",
-        "            contrasenia =  input(\"Ingrese la contrasenia: \")\n",
-        "            registro_usuario(usuarios, nombre_usuario, contrasenia)\n",
-        "        elif elegir == '4':\n",
-        "            print(\"Gracias, hasta la proxima.\")\n",
-        "            break\n",
-        "        else:\n",
-        "            print(\"Error. Opcion no valida\")\n",
-        "\n",
-        "funcion_principal()"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [],
-      "metadata": {
-        "id": "ZjX7QvIjQ2fm"
-      },
-      "execution_count": null,
-      "outputs": []
-    }
-  ]
-}
+
+def registro_usuario(usuarios, nombre_usuario, contrasenia):
+    if nombre_usuario in usuarios:
+        print("El usuario ya existe.")
+    else:
+        usuarios[nombre_usuario] = contrasenia
+        print("Usuario registrado con exito.")
+
+def mostrar_usuarios(usuarios):
+    print("Usuarios registrados: ")
+    for usuario in usuarios:
+        print(".", usuario)
+
+
+def login_usuario(usuarios, nombre_usuario, contrasenia):
+    if nombre_usuario in usuarios and usuarios[nombre_usuario] == contrasenia:
+        print("bienvenido ", nombre_usuario, ".")
+    else:
+        print("ERROR, nombre de usuario o contrasenia incorrecta.")
+
+
+usuarios = {}
+
+def funcion_principal():
+    while True:
+        print("Menu\n")
+        print("1. Login in ")
+        print("2. Mostrar usuarios registrados")
+        print("3. Registrarse")
+        print("4. Salir")
+
+        elegir = input("Seleccione una opcion: ")
+
+        if elegir == '1':
+            nombre_usuario = input("Ingrese su nombre de usuario: ")
+            contrasenia = input("Ingrese su contrasenia: ")
+            login_usuario(usuarios, nombre_usuario, contrasenia)
+        elif elegir == '2':
+            mostrar_usuarios(usuarios)
+        elif elegir == '3':
+            nombre_usuario = input("Ingrese el nombre de usuario: ")
+            contrasenia =  input("Ingrese la contrasenia: ")
+            registro_usuario(usuarios, nombre_usuario, contrasenia)
+        elif elegir == '4':
+            print("Gracias, hasta la proxima.")
+            break
+        else:
+            print("Error. Opcion no valida")
+
+funcion_principal()
